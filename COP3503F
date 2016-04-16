@@ -4,6 +4,7 @@ using namespace std;
 
 int main(){
 
-  cout << "Welcome to the Computer Vision Recognition System Acquisition Mission\n"
+  cout << "Welcome to the Computer Vision Recognition System Acquisition Mission\n";
+  
   return 0
 }
