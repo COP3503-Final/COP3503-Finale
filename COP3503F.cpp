@@ -4,6 +4,9 @@
 #include "newUser.h"
 #include <string>
 #include "Login.h"
+#include <vector>
+#include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -74,10 +77,45 @@ int main()
   do {
     if (n == 1)
     {
-      int l;
-      loginMenu(l);
-      cout << l << endl;
-    }
+      cout << "================================";
+      cout << endl;
+      cout << endl;
+      cout << "Login";
+      cout << endl;
+      cout << "1. Input User Name"; //Open OpenCV once they figure out how to implement it
+      cout << endl;
+      cout << "2. Exit";
+      cout << endl;
+      cout << endl;
+      cout << "Choose an option: ";
+      int n;
+      cin >> n;
+      cout << endl;
+//
+//
+            if (n == 1)
+            //facial recognition would pop up instead of asking for the username
+            {
+              string n;
+              cout << "Username: ";
+              cin >> n;
+
+
+                          ifstream myFile("user.csv");
+                            string line;
+                            while (getline(myFile, line))
+                            {
+                              std::istringstream s(line);
+                              std::string field;
+                              while (getline(s, field,','))
+                              {
+                                cout << field << "\t";
+                                cout << endl;
+                              }
+                            }
+
+            }
+      }
 
         else if (n == 2)
         {
