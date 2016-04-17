@@ -10,7 +10,7 @@ int loginMenu(int n)
     cout << "Login";
     cout << endl;
     cout << "1. Input User Name"; //Open OpenCV once they figure out how to implement it
-    cout << "2. Exit"
+    cout << "2. Exit";
     cout << endl;
     cout << "Choose an option: ";
 
