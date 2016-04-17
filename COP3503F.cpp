@@ -15,8 +15,16 @@ void newUser::writeToFile(string name, int day, int month, int year, int feet, i
                           string color)
 {
 
+
     ofstream myfile;
-    myfile.open("user.csv");
+    if(!myfile.is_open())
+    {
+        myfile.open("user.csv");
+    }
+
+
+
+
     myfile << name <<",";
     myfile << day << "/" << month << "/" << year << ",";
     myfile << feet << " " << inches << ",";
@@ -33,9 +41,10 @@ int month = 0;
 int year = 0;
 int feet = 0;
 int inches = 0;
+int height = 0;
 string gender = "";
 string color = "";
-int n = 0;
+
 
 int main()
 {
@@ -252,7 +261,7 @@ int main()
             cin.clear();
             ////////////////////////////
             //checks for day of birth//
-            //////////////////////////
+            ///////////////////////////
             cout << "Please type the day you were born";
             cout << endl;
             cout << "\tFor example, a person born on the 22nd day of the month would enter the number 22";
@@ -289,7 +298,7 @@ int main()
                 }
 
                     //double checks for decimals and leaves while with proper input
-                else if(n == (int) day)
+                else
                 {
                     n = day;
                     false;
@@ -340,16 +349,209 @@ int main()
                     //double checks for decimals and leaves while with proper input
                 else
                 {
-                    n = day;
+                    n = month;
+                    false;
+                    break;
+                }
+            }
+
+            cout << endl;
+
+
+            ////////////////
+            ///check year///
+            ////////////////
+
+
+            cout << "Please enter the year you were born in using 4 digits";
+            cout << endl;
+            cout << "\tFor example, a user born in 1998 would enter 1998 ";
+            cout << endl;
+            true;
+            while(true)
+            {
+
+                cin >> year;
+                //checks for letters
+                if(cin.fail())
+                {
+
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "Please enter the year you were born in using 4 digits" << endl;
+                    continue;
+
+                }
+                //checks for decimals
+
+                n = year;
+
+                if(n < 1900 || n > 2016)
+                {
+
+                    if(n < 1900)
+                    {
+                        cout << "There's now way you can be over 116 years old!" << endl;
+                        cout<< "Please enter the year you were born in using 4 digits";
+                        cout << endl;
+                        cin.clear();
+                        cin.ignore(1000, '\n');
+                        continue;
+                    }
+                    else
+                    {
+                        cout << "Are you from the future?";
+                        cout << endl;
+                        cout<< "Please enter the year you were born in using 4 digits";
+                        cout << endl;
+                        cin.clear();
+                        cin.ignore(1000, '\n');
+                        continue;
+
+                    }
+
+
+                }
+
+                    //double checks for decimals and leaves while with proper input
+                else
+                {
+                    n = year;
+                    false;
+                    break;
+                }
+            }
+
+
+            //////////////////
+            ///check height///
+            //////////////////
+
+
+            cout << "Please enter your height in feet and inches";
+            cout << endl;
+            cout << "\tFor example, a user who is exactly 5 feet would enter 5 for feet and 0 inches";
+            cout << endl;
+            true;
+            while(true)
+            {
+                cout << "Feet: " << endl;
+
+                cin >> feet;
+                //checks for letters
+                if (cin.fail()) {
+
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "Please enter your height in feet and inches" << endl;
+                    continue;
+
+                }
+                //checks for decimals
+
+                n = feet;
+
+                if (n < 0 || n > 10) {
+                    cout << "Please enter a reasonable height";
+                    cout << endl;
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    continue;
+                }
+
+                    //double checks for decimals and leaves while with proper input
+                else {
+                    n = feet;
+                    false;
+                    break;
+                }
+            }
+            ////////////////////////////
+            ////gets inches of height///
+            ///////////////////////////
+
+
+            true;
+            while(true)
+            {
+                cout << "Inches: " << endl;
+
+                cin >> inches;
+                //checks for letters
+                if(cin.fail())
+                {
+
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "Please enter a number that is between 0 and 11 inclusive" << endl;
+                    continue;
+
+                }
+                //checks for decimals
+
+                n = inches;
+
+                if(n < 0 || n > 11)
+                {
+
+                    cout<< "Please enter a number that is between 0 and 11 inclusive";
+                    cout << endl;
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    continue;
+
+                }
+
+                    //double checks for decimals and leaves while with proper input
+                else
+                {
+                    n = inches;
                     false;
                     break;
                 }
 
-
             }
-            newUser user = newUser();
 
-            user.writeToFile(name, day, month, year, feet, inches, gender, color);
+
+
+            cout << "Please enter your gender as \"Male\", \"Female\", or \"Other\"";
+            cout << endl;
+            cin >> gender;
+            cin.clear();
+            while(true)
+            {
+                if(gender != "Male" && gender != "Female" && gender != "Other")
+                {
+                    cout << "Please enter your gender as \"Male\", \"Female\", or \"Other\"";
+                    cout << endl;
+                    cin >> gender;
+                    cin.clear();
+                }
+                else
+                {
+                    false;
+                    break;
+                }
+            }
+
+            cout << endl;
+
+            /////////////////////////
+            ////asks for color//////
+            ////////////////////////
+            cout << "Please enter your favorite color: ";
+            cout << endl;
+            cin >> color;
+            cin.clear();
+
+
+            cout << endl;
+
+
+            newUser users = newUser();
+
+            users.writeToFile(name, day, month, year, feet, inches, gender, color);
+
 
             cout << "=====================================================================\n\n";
             cout << "Computer Vision Recognition System Acquisition Mission Menu\n\n";
