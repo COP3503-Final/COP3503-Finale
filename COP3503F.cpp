@@ -28,6 +28,7 @@ int feet = 0;
 int inches = 0;
 string gender = "";
 string color = "";
+int n = 0;
 
 int main()
 {
@@ -126,9 +127,9 @@ int main()
             }
 
                 //double checks for decimals and leaves while with proper input
-            else if(n == (int) v)
+            else if(n == (int) day)
             {
-                n = v;
+                n = day;
                 break;
             }
 
@@ -179,9 +180,9 @@ int main()
             }
 
                 //double checks for decimals and leaves while with proper input
-            else if(n == (int) v)
+            else if(n == (int) day)
             {
-                n = v;
+                n = day;
                 break;
             }
 
