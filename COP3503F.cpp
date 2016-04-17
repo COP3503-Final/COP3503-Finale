@@ -68,9 +68,6 @@ int main()
   cout << "3. Exit";
   cout << endl;
   cout << endl;
-  cout << "================================";
-  cout << endl;
-  cout << endl;
 
   ////////////////////////////
   //do while loop for main menu//
@@ -86,10 +83,11 @@ int main()
   do {
     if (n == 1)
     {
-      cout << "================================";
+      cout << "===";
       cout << endl;
       cout << endl;
       cout << "Login";
+      cout << endl;
       cout << endl;
       cout << "1. Input User Name"; //Open OpenCV once they figure out how to implement it
       cout << endl;
@@ -105,26 +103,104 @@ int main()
             if (n == 1)
             //facial recognition would pop up instead of asking for the username
             {
-              string n;
-              cout << "Username: ";
-              cin >> n;
+                              cout << "Username: ";
+                              string n;
+                              cin >> n;
+                              cout << endl;
+                              string a;
+                              string b = "";
+                              string c = "";
+                              string d = "";
+                              bool login = false;
 
+                                          ifstream myFile("user.csv");
+                                          string line;
+                                            while (getline(myFile, line))
+                                            {
+                                              istringstream s(line);
+                                              string field;
+                                                  while (getline(s, field,','))
+                                                  {
+                                                    //cout << field << "\t";
+                                                    if (field != n)
+                                                    {
+                                                      break;
+                                                    }
+                                                    else
+                                                    {
+                                                      login = true;
+                                                      a = field;
+                                                      while (getline(s, field,','))
+                                                      {
+                                                          if (b == "")
+                                                          {
+                                                            b = field;
+                                                          }
+                                                          else if (b != "" && c == "" && d == "")
+                                                          {
+                                                            c = field;
+                                                          }
+                                                          else
+                                                          {
+                                                            d = field;
+                                                          }
+                                                      }
+                                                    }
+                                                  }
+                                            }
+                              if (login == true){
+                                            cout << "===";
+                                            cout << endl;
+                                            cout << endl;
+                                            cout << "Welcome, you are now logged in as " << a;
+                                            cout << endl;
+                                            cout << endl;
+                                            cout << "Information: ";
+                                            cout << endl;
+                                            cout << endl;
+                                            cout << "Birth Date: " << b;
+                                            cout << endl;
+                                            cout << "Height: " << c;
+                                            cout << endl;
+                                            cout << "Favorite Color: " << d;
+                                            cout << endl;
+                                            cout << endl;
 
-                          ifstream myFile("user.csv");
-                            string line;
-                            while (getline(myFile, line))
-                            {
-                              std::istringstream s(line);
-                              std::string field;
-                              while (getline(s, field,','))
+                                              bool optionStatement = true;
+                                              do{
+
+                                                cout << "===";
+                                                cout << endl;
+                                                cout << endl;
+                                                cout << "1. Edit Information ";
+                                                cout << endl;
+                                                cout << "2. Logout";
+                                                cout << endl;
+                                                cout << endl;
+                                                cout << "Choose an option : ";
+                                                int option;
+                                                cin >> option;
+                                                cout << endl;
+
+                                                    if (option == 1)
+                                                    {
+                                                      optionStatement = true;
+                                                    }
+                                                    else if (option == 2)
+                                                    {
+                                                      optionStatement = false;
+                                                    }
+                                              } while (optionStatement == true);
+
+                              }
+                              else
                               {
-                                cout << field << "\t";
+                                cout << "User could not be found!";
+                                cout << endl;
                                 cout << endl;
                               }
-                            }
-
             }
-      }
+    }
 
         else if (n == 2)
         {
