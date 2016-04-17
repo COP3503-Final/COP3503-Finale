@@ -7,12 +7,14 @@
 
 using namespace std;
 
+
 void newUser::writeToFile(string name, int day, int month, int year, int feet, int inches, string gender,
                           string color)
 {
+
     ofstream myfile;
     myfile.open("user.csv");
-    myfile << name << ",";
+    myfile << name <<",";
     myfile << day << "/" << month << "/" << year << ",";
     myfile << feet << " " << inches << ",";
     myfile << gender << ",";
@@ -197,6 +199,7 @@ int main()
                 else
                 {
                     n = day;
+                    false;
                     break;
                 }
 
@@ -205,6 +208,20 @@ int main()
             newUser user = newUser();
 
             user.writeToFile(name, day, month, year, feet, inches, gender, color);
+
+            cout << "=====================================================================\n\n";
+            cout << "Computer Vision Recognition System Acquisition Mission Menu\n\n";
+            cout << "1. Login\n";
+            cout << "2. Add User\n";
+            cout << "3. Exit\n\n";
+            cout << "================================\n\n";
+
+            cout << "Choose an option: ";
+            cout << endl;
+
+            cin >> n;
+            cout << endl;
+
           }
     else if (n == 3)
     {
@@ -219,6 +236,7 @@ int main()
       statement = false;
     }
   } while (statement == true);
+
 
     return 0;
 }
