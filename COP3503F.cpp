@@ -1,8 +1,12 @@
 #include <iostream>
+#include <fstream>
 #include "COP3503F.h"
 #include "newUser.h"
 #include <string>
-#include <fstream>
+#include "Login.h"
+#include <vector>
+#include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -46,12 +50,31 @@ int main()
 {
 
 
-    cout << "=====================================================================\n\n";
-    cout << "Welcome to the Computer Vision Recognition System Acquisition Mission\n\n";
-    cout << "1. Login\n";
-    cout << "2. Add User\n";
-    cout << "3. Exit\n\n";
-    cout << "================================\n\n";
+  ////////////////////////////
+  ////Initializes Main Meny//
+  //////////////////////////
+
+  cout << "=====================================================================";
+  cout << endl;
+  cout << endl;
+  //All of the '==' will be used to separate the menus for easier viewing
+  cout << "Welcome to the Computer Vision Recognition System Acquisition Mission";
+  cout << endl;
+  cout << endl;
+  cout << "1. Login";
+  cout << endl;
+  cout << "2. Add User";
+  cout << endl;
+  cout << "3. Exit";
+  cout << endl;
+  cout << endl;
+  cout << "================================";
+  cout << endl;
+  cout << endl;
+
+  ////////////////////////////
+  //do while loop for main menu//
+  //////////////////////////
 
     cout << "Choose an option: ";
     cout << endl;
@@ -59,12 +82,49 @@ int main()
     cin >> n;
     cout << endl;
 
-    bool statement = true;
-    do {
-        if (n == 1)
-        {
+  bool statement = true;
+  do {
+    if (n == 1)
+    {
+      cout << "================================";
+      cout << endl;
+      cout << endl;
+      cout << "Login";
+      cout << endl;
+      cout << "1. Input User Name"; //Open OpenCV once they figure out how to implement it
+      cout << endl;
+      cout << "2. Exit";
+      cout << endl;
+      cout << endl;
+      cout << "Choose an option: ";
+      int n;
+      cin >> n;
+      cout << endl;
+//
+//
+            if (n == 1)
+            //facial recognition would pop up instead of asking for the username
+            {
+              string n;
+              cout << "Username: ";
+              cin >> n;
 
-        }
+
+                          ifstream myFile("user.csv");
+                            string line;
+                            while (getline(myFile, line))
+                            {
+                              std::istringstream s(line);
+                              std::string field;
+                              while (getline(s, field,','))
+                              {
+                                cout << field << "\t";
+                                cout << endl;
+                              }
+                            }
+
+            }
+      }
 
         else if (n == 2)
         {
@@ -402,19 +462,21 @@ int main()
             cin >> n;
             cout << endl;
 
-        }
+          }
+    else if (n == 3)
+    {
+      cout << "================================";
+      cout << endl;
+      cout << endl;
+      cout << "Thanks for coming! See you next time!";
+      cout << endl;
+      cout << endl;
+      cout << "=====================================================================";
+      cout << endl;
+      statement = false;
+    }
+  } while (statement == true);
 
-        else if (n == 3)
-        {
-            cout << "================================\n\n";
-            cout << "Thanks for coming! See you next time!\n\n";
-            cout << "=====================================================================\n";
-            statement = false;
-        }
-
-
-
-    } while (statement == true);
 
     return 0;
 }
