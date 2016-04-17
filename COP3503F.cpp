@@ -200,6 +200,34 @@ int main()
                                 cout << endl;
                               }
             }
+
+            else if (n == 2)
+            {
+              cout << "=====================================================================";
+              cout << endl;
+              cout << endl;
+              //All of the '==' will be used to separate the menus for easier viewing
+              cout << "Welcome to the Computer Vision Recognition System Acquisition Mission";
+              cout << endl;
+              cout << endl;
+              cout << "1. Login";
+              cout << endl;
+              cout << "2. Add User";
+              cout << endl;
+              cout << "3. Exit";
+              cout << endl;
+              cout << endl;
+
+              ////////////////////////////
+              //do while loop for main menu//
+              //////////////////////////
+
+                cout << "Choose an option: ";
+                cout << endl;
+                int n;
+                cin >> n;
+                cout << endl;
+            }
     }
 
         else if (n == 2)
