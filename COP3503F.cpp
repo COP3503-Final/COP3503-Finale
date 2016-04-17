@@ -1,8 +1,9 @@
 #include <iostream>
-#include "COP3503running.h"
-#include "newUserRunning.h"
-#include <string>
 #include <fstream>
+#include "COP3503F.h"
+#include "newUser.h"
+#include <string>
+#include "Login.h"
 
 using namespace std;
 
@@ -35,12 +36,22 @@ int main()
 {
 
 
-    cout << "=====================================================================\n\n";
-    cout << "Welcome to the Computer Vision Recognition System Acquisition Mission\n\n";
-    cout << "1. Login\n";
-    cout << "2. Add User\n";
-    cout << "3. Exit\n\n";
-    cout << "================================\n\n";
+  cout << "=====================================================================";
+  cout << endl;
+  cout << endl;
+  cout << "Welcome to the Computer Vision Recognition System Acquisition Mission";
+  cout << endl;
+  cout << endl;
+  cout << "1. Login";
+  cout << endl;
+  cout << "2. Add User";
+  cout << endl;
+  cout << "3. Exit";
+  cout << endl;
+  cout << endl;
+  cout << "================================";
+  cout << endl;
+  cout << endl;
 
     cout << "Choose an option: ";
     cout << endl;
@@ -48,12 +59,13 @@ int main()
     cin >> n;
     cout << endl;
 
-    bool statement = true;
-    do {
-        if (n == 1)
-        {
-
-        }
+  bool statement = true;
+  do {
+    if (n == 1)
+    {
+      int l;
+      loginMenu(l);
+    }
 
         else if (n == 2)
         {
@@ -184,16 +196,19 @@ int main()
 
             user.writeToFile(name, day, month, year, feet, inches, gender, color);
 
-        }
-
-        else if (n == 3)
-        {
-            cout << "================================\n\n";
-            cout << "Thanks for coming! See you next time!\n\n";
-            cout << "=====================================================================\n";
-            statement = false;
-        }
-    } while (statement == true);
+    else if (n == 3)
+    {
+      cout << "================================";
+      cout << endl;
+      cout << endl;
+      cout << "Thanks for coming! See you next time!";
+      cout << endl;
+      cout << endl;
+      cout << "=====================================================================";
+      cout << endl;
+      statement = false;
+    }
+  } while (statement == true);
 
     return 0;
 }
