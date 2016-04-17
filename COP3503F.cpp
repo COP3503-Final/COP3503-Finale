@@ -50,31 +50,31 @@ int main()
 {
 
 
-  ////////////////////////////
-  ////Initializes Main Meny//
-  //////////////////////////
+    ////////////////////////////
+    ////Initializes Main Meny//
+    //////////////////////////
 
-  cout << "=====================================================================";
-  cout << endl;
-  cout << endl;
-  //All of the '==' will be used to separate the menus for easier viewing
-  cout << "Welcome to the Computer Vision Recognition System Acquisition Mission";
-  cout << endl;
-  cout << endl;
-  cout << "1. Login";
-  cout << endl;
-  cout << "2. Add User";
-  cout << endl;
-  cout << "3. Exit";
-  cout << endl;
-  cout << endl;
-  cout << "================================";
-  cout << endl;
-  cout << endl;
+    cout << "=====================================================================";
+    cout << endl;
+    cout << endl;
+    //All of the '==' will be used to separate the menus for easier viewing
+    cout << "Welcome to the Computer Vision Recognition System Acquisition Mission";
+    cout << endl;
+    cout << endl;
+    cout << "1. Login";
+    cout << endl;
+    cout << "2. Add User";
+    cout << endl;
+    cout << "3. Exit";
+    cout << endl;
+    cout << endl;
+    cout << "================================";
+    cout << endl;
+    cout << endl;
 
-  ////////////////////////////
-  //do while loop for main menu//
-  //////////////////////////
+    ////////////////////////////
+    //do while loop for main menu//
+    //////////////////////////
 
     cout << "Choose an option: ";
     cout << endl;
@@ -82,49 +82,49 @@ int main()
     cin >> n;
     cout << endl;
 
-  bool statement = true;
-  do {
-    if (n == 1)
-    {
-      cout << "================================";
-      cout << endl;
-      cout << endl;
-      cout << "Login";
-      cout << endl;
-      cout << "1. Input User Name"; //Open OpenCV once they figure out how to implement it
-      cout << endl;
-      cout << "2. Exit";
-      cout << endl;
-      cout << endl;
-      cout << "Choose an option: ";
-      int n;
-      cin >> n;
-      cout << endl;
+    bool statement = true;
+    do {
+        if (n == 1)
+        {
+            cout << "================================";
+            cout << endl;
+            cout << endl;
+            cout << "Login";
+            cout << endl;
+            cout << "1. Input User Name"; //Open OpenCV once they figure out how to implement it
+            cout << endl;
+            cout << "2. Exit";
+            cout << endl;
+            cout << endl;
+            cout << "Choose an option: ";
+            int n;
+            cin >> n;
+            cout << endl;
 //
 //
             if (n == 1)
-            //facial recognition would pop up instead of asking for the username
+                //facial recognition would pop up instead of asking for the username
             {
-              string n;
-              cout << "Username: ";
-              cin >> n;
+                string n;
+                cout << "Username: ";
+                cin >> n;
 
 
-                          ifstream myFile("user.csv");
-                            string line;
-                            while (getline(myFile, line))
-                            {
-                              std::istringstream s(line);
-                              std::string field;
-                              while (getline(s, field,','))
-                              {
-                                cout << field << "\t";
-                                cout << endl;
-                              }
-                            }
+                ifstream myFile("user.csv");
+                string line;
+                while (getline(myFile, line))
+                {
+                    std::istringstream s(line);
+                    std::string field;
+                    while (getline(s, field,','))
+                    {
+                        cout << field << "\t";
+                        cout << endl;
+                    }
+                }
 
             }
-      }
+        }
 
         else if (n == 2)
         {
@@ -132,6 +132,7 @@ int main()
             cout << "Please type in a username that is between 1 and 15 characters inclusive: ";
             cout << endl;
             cin >> name;
+            cout << endl;
             while(name.length() > 15)
             {
                 if(name.length() > 15)
@@ -142,6 +143,7 @@ int main()
                     cout << endl;
                     cin >> name;
                     cin.clear();
+                    cout << endl;
                 }
                 else
                 {
@@ -151,6 +153,7 @@ int main()
                     cout << endl;
                     cin >> name;
                     cin.clear();
+                    cout << endl;
                 }
 
             }
@@ -168,6 +171,7 @@ int main()
             {
 
                 cin >> day;
+                cout << endl;
                 //checks for letters
                 if(cin.fail())
                 {
@@ -218,6 +222,7 @@ int main()
 
                 cin >> month;
                 //checks for letters
+                cout << endl;
                 if(cin.fail())
                 {
 
@@ -269,6 +274,7 @@ int main()
 
                 cin >> year;
                 //checks for letters
+                cout << endl;
                 if(cin.fail())
                 {
 
@@ -374,6 +380,8 @@ int main()
 
                 cin >> inches;
                 //checks for letters
+
+                cout << endl;
                 if(cin.fail())
                 {
 
@@ -416,7 +424,9 @@ int main()
             cin.clear();
             while(true)
             {
-                if(gender != "Male" && gender != "Female" && gender != "Other")
+                cout << endl;
+                if(gender != "Male" && gender != "Female" && gender != "Other" && gender != "male" &&
+                   gender != "female" && gender != "other")
                 {
                     cout << "Please enter your gender as \"Male\", \"Female\", or \"Other\"";
                     cout << endl;
@@ -462,20 +472,20 @@ int main()
             cin >> n;
             cout << endl;
 
-          }
-    else if (n == 3)
-    {
-      cout << "================================";
-      cout << endl;
-      cout << endl;
-      cout << "Thanks for coming! See you next time!";
-      cout << endl;
-      cout << endl;
-      cout << "=====================================================================";
-      cout << endl;
-      statement = false;
-    }
-  } while (statement == true);
+        }
+        else if (n == 3)
+        {
+            cout << "================================";
+            cout << endl;
+            cout << endl;
+            cout << "Thanks for coming! See you next time!";
+            cout << endl;
+            cout << endl;
+            cout << "=====================================================================";
+            cout << endl;
+            statement = false;
+        }
+    } while (statement == true);
 
 
     return 0;
