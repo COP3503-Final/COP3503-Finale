@@ -11,8 +11,14 @@ void newUser::writeToFile(string name, int day, int month, int year, int feet, i
                           string color)
 {
 
+
     ofstream myfile;
-    myfile.open("user.csv");
+    if(!myfile.is_open())
+    {
+        myfile.open("user.csv");
+    }
+
+
 
 
     myfile << name <<",";
