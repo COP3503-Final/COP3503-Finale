@@ -10,7 +10,7 @@ void newUser::writeToFile(string name, int day, int month, int year, int feet, i
                           string color)
 {
     ofstream myfile;
-    myfile.open ("example.csv");
+    myfile.open ("user.csv");
     myfile << name << ",";
     myfile << day << "/" << month << "/" << year << ",";
     myfile << feet << " " << inches << ",";
@@ -92,9 +92,116 @@ int main()
 
         }
         cin.clear();
+        ////////////////////////////
+        //checks for day of birth//
+        //////////////////////////
+        cout << "Please type the day you were born";
+        cout << endl;
+        cout << "For example, a person born on the 22nd day of the month would enter the number 22";
+        cout << endl;
+
+        //check individual months
+        while(true)
+        {
+
+            cin >> day;
+            //checks for letters
+            if(cin.fail())
+            {
+
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Please enter a number that is a day of the month" << endl;
+                continue;
+
+            }
+                //checks for decimals
+            else if(day != (int)day)
+            {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Please enter a number that is a day of the month" << endl;
+                continue;
+            }
+            //checks for range/odd
+            n = day;
+
+            if(n%2 != 1 || n < 1 || n > 31)
+            {
+
+                cout<< "Please enter a number that is a day of the month";
+                cout << endl;
+                cin.clear();
+                cin.ignore(1000, '\n');
+                continue;
+
+            }
+
+                //double checks for decimals and leaves while with proper input
+            else if(n == (int) v)
+            {
+                n = v;
+                break;
+            }
 
 
+        }
 
+        ///////////////////////////
+        ////asks user for month////
+        //////////////////////////
+
+        cout << "Please enter the numeric value of the month you were born in";
+        cout << endl;
+        cout << "\tFor example, a user born in April would enter the number 4"
+        while(true)
+        {
+
+            cin >> month;
+            //checks for letters
+            if(cin.fail())
+            {
+
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Please enter a number that is between 1 and 12 inclusive" << endl;
+                continue;
+
+            }
+                //checks for decimals
+            else if(day != (int)day)
+            {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Please enter a number that is between 1 and 12 inclusive" << endl;
+                continue;
+            }
+            //checks for range/odd
+            n = day;
+
+            if(n%2 != 1 || n < 1 || n > 12)
+            {
+
+                cout<< "Please enter a number that is between 1 and 12 inclusive";
+                cout << endl;
+                cin.clear();
+                cin.ignore(1000, '\n');
+                continue;
+
+            }
+
+                //double checks for decimals and leaves while with proper input
+            else if(n == (int) v)
+            {
+                n = v;
+                break;
+            }
+
+
+        }
+        newUser user = newUser();
+
+        user.writeToFile(name, day, month, year, feet, inches, gender, color);
 
     }
 
