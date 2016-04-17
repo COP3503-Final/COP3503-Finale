@@ -38,9 +38,14 @@ int main()
 {
 
 
+  ////////////////////////////
+  ////Initializes Main Meny//
+  //////////////////////////
+
   cout << "=====================================================================";
   cout << endl;
   cout << endl;
+  //All of the '==' will be used to separate the menus for easier viewing
   cout << "Welcome to the Computer Vision Recognition System Acquisition Mission";
   cout << endl;
   cout << endl;
@@ -55,6 +60,10 @@ int main()
   cout << endl;
   cout << endl;
 
+  ////////////////////////////
+  //do while loop for main menu//
+  //////////////////////////
+
     cout << "Choose an option: ";
     cout << endl;
     int n;
@@ -67,6 +76,7 @@ int main()
     {
       int l;
       loginMenu(l);
+      cout << l << endl;
     }
 
         else if (n == 2)
@@ -212,6 +222,7 @@ int main()
             cin >> n;
             cout << endl;
 
+          }
     else if (n == 3)
     {
       cout << "================================";
