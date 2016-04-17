@@ -14,6 +14,8 @@ void newUser::writeToFile(string name, int day, int month, int year, int feet, i
 
     ofstream myfile;
     myfile.open("user.csv");
+
+
     myfile << name <<",";
     myfile << day << "/" << month << "/" << year << ",";
     myfile << feet << " " << inches << ",";
@@ -287,7 +289,7 @@ int main()
             {
                 cout << "Feet: " << endl;
 
-                cin >> height;
+                cin >> feet;
                 //checks for letters
                 if (cin.fail()) {
 
@@ -299,7 +301,7 @@ int main()
                 }
                 //checks for decimals
 
-                n = height;
+                n = feet;
 
                 if (n < 0 || n > 10) {
                     cout << "Please enter a reasonable height";
@@ -311,7 +313,7 @@ int main()
 
                     //double checks for decimals and leaves while with proper input
                 else {
-                    n = height;
+                    n = feet;
                     false;
                     break;
                 }
@@ -401,6 +403,7 @@ int main()
             newUser users = newUser();
 
             users.writeToFile(name, day, month, year, feet, inches, gender, color);
+
 
             cout << "=====================================================================\n\n";
             cout << "Computer Vision Recognition System Acquisition Mission Menu\n\n";
