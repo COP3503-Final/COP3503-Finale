@@ -17,14 +17,7 @@ void newUser::writeToFile(string name, int day, int month, int year, int feet, i
 
 
     ofstream myfile;
-    if(!myfile.is_open())
-    {
-        myfile.open("user.csv");
-    }
-
-
-
-
+    myfile.open("user.csv", ofstream :: app);
     myfile << name <<",";
     myfile << day << "/" << month << "/" << year << ",";
     myfile << feet << " " << inches << ",";
