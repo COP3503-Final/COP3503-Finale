@@ -4,7 +4,7 @@ using namespace std;
 
 int loginMenu(int n)
 {
-    cout << "=====================================================================";
+    cout << "================================";
     cout << endl;
     cout << endl;
     cout << "Login";
@@ -13,6 +13,7 @@ int loginMenu(int n)
     cout << "2. Exit"
     cout << endl;
     cout << "Choose an option: ";
+
     cin >> n;
 
     return n;
