@@ -6,7 +6,7 @@ using namespace std;
 class newUser
 {
 public:
-    void writeToFile(string name, int day, int name, int year, int feet, int inches, string gender, string color);
+    void writeToFile(string name, int day, int month, int year, int feet, int inches, string gender, string color);
 
 
 

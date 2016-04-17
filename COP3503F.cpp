@@ -142,7 +142,7 @@ int main()
 
         cout << "Please enter the numeric value of the month you were born in";
         cout << endl;
-        cout << "\tFor example, a user born in April would enter the number 4"
+        cout << "\tFor example, a user born in April would enter the number 4";
         while(true)
         {
 
