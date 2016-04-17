@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+  cout << "butts" << endl;
 
   cout << "=====================================================================\n\n";
   cout << "Welcome to the Computer Vision Recognition System Acquisition Mission\n\n";
