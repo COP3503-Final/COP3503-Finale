@@ -17,14 +17,7 @@ void newUser::writeToFile(string name, int day, int month, int year, int feet, i
 
 
     ofstream myfile;
-    if(!myfile.is_open())
-    {
-        myfile.open("user.csv");
-    }
-
-
-
-
+    myfile.open("user.csv", ofstream :: app);
     myfile << name <<",";
     myfile << day << "/" << month << "/" << year << ",";
     myfile << feet << " " << inches << ",";
@@ -103,7 +96,7 @@ int main()
 //
 //
             if (n == 1)
-            //facial recognition would pop up instead of asking for the username
+                //facial recognition would pop up instead of asking for the username
             {
                               cout << "Username: ";
                               string n;
@@ -232,6 +225,7 @@ int main()
             cout << "Please type in a username that is between 1 and 15 characters inclusive: ";
             cout << endl;
             cin >> name;
+            cout << endl;
             while(name.length() > 15)
             {
                 if(name.length() > 15)
@@ -242,6 +236,7 @@ int main()
                     cout << endl;
                     cin >> name;
                     cin.clear();
+                    cout << endl;
                 }
                 else
                 {
@@ -251,6 +246,7 @@ int main()
                     cout << endl;
                     cin >> name;
                     cin.clear();
+                    cout << endl;
                 }
 
             }
@@ -268,6 +264,7 @@ int main()
             {
 
                 cin >> day;
+                cout << endl;
                 //checks for letters
                 if(cin.fail())
                 {
@@ -318,6 +315,7 @@ int main()
 
                 cin >> month;
                 //checks for letters
+                cout << endl;
                 if(cin.fail())
                 {
 
@@ -369,6 +367,7 @@ int main()
 
                 cin >> year;
                 //checks for letters
+                cout << endl;
                 if(cin.fail())
                 {
 
@@ -473,6 +472,8 @@ int main()
 
                 cin >> inches;
                 //checks for letters
+
+                cout << endl;
                 if(cin.fail())
                 {
 
@@ -515,7 +516,9 @@ int main()
             cin.clear();
             while(true)
             {
-                if(gender != "Male" && gender != "Female" && gender != "Other")
+                cout << endl;
+                if(gender != "Male" && gender != "Female" && gender != "Other" && gender != "male" &&
+                   gender != "female" && gender != "other")
                 {
                     cout << "Please enter your gender as \"Male\", \"Female\", or \"Other\"";
                     cout << endl;
