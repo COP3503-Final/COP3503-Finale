@@ -53,13 +53,13 @@ int main()
     //do while loop for main menu//
     //////////////////////////
 
-    cout << "Choose an option: ";
-    cout << endl;
-    int n;
-
-
     bool statement = true;
     do {
+        cout << "Choose an option: ";
+        cout << endl;
+        int n;
+
+
         /////////////////////////////
         ///checks menu input/////////
         ////////////////////////////
@@ -494,11 +494,6 @@ int main()
             cout << "3. Exit\n\n";
             cout << "================================\n\n";
 
-            cout << "Choose an option: ";
-            cout << endl;
-
-            cin >> n;
-            cout << endl;
 
         }
         else if (n == 3)
@@ -515,6 +510,6 @@ int main()
         }
     } while (statement == true);
 
-//
+
     return 0;
 }
