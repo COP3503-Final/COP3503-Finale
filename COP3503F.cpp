@@ -44,7 +44,7 @@ int main()
 
 
     ////////////////////////////
-    ////Initializes Main Meny//
+    ///Initializes Main Menu///
     //////////////////////////
 
     cout << "=====================================================================";
@@ -72,11 +72,53 @@ int main()
     cout << "Choose an option: ";
     cout << endl;
     int n;
-    cin >> n;
-    cout << endl;
+
 
     bool statement = true;
     do {
+        /////////////////////////////
+        ///checks menu input/////////
+        ////////////////////////////
+
+        while(true)
+        {
+
+            cin >> n;
+            cout << endl;
+            //checks for letters
+            if(cin.fail())
+            {
+
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Please enter a number that is related to a menu choice";
+                cout << endl;
+                continue;
+
+            }
+
+            //checks for range/odd
+
+            if(n < 1 || n > 3)
+            {
+
+                cout<< "Please enter a number that is related to a menu choice";
+                cout << endl;
+                cin.clear();
+                cin.ignore(1000, '\n');
+                continue;
+
+            }
+
+                //double checks for decimals and leaves while with proper input
+            else
+            {
+                false;
+                break;
+            }
+
+
+        }
         if (n == 1)
         {
             cout << "================================";
