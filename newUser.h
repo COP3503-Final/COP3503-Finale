@@ -39,6 +39,10 @@ public:
     int getDay();
     int getMonth();
     int getYear();
+    int getFeet();
+    int getInches();
+    void setFeet(int feet);
+    void setInches(int inches);
 
     void setHeight(int feet, int inches);
     string getHeight();
@@ -49,8 +53,9 @@ public:
     void setColor(string color);
     string getColor();
 
-
-
+    void setDay(int day);
+    void setMonth(int month);
+    void setYear(int year);
 
 
 
