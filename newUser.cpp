@@ -71,6 +71,40 @@ int newUser::getMonth()
   return this->month;
 }
 
+void newUser ::setMonth(int month)
+{
+  this->month = month;
+}
+void newUser::setDay(int day)
+{
+  this->day=day;
+}
+
+void newUser::setYear(int year)
+{
+  this->year=year;
+}
+
+int newUser::getFeet()
+{
+  return this->feet;
+}
+
+int newUser::getInches()
+{
+  return this->inches;
+}
+
+void newUser::setFeet(int feet)
+{
+  this->feet=feet;
+}
+
+void newUser::setInches(int inches)
+{
+  this->inches=inches;
+}
+
 
 void newUser::writeToFile()
 {

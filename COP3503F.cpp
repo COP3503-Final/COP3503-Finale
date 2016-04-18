@@ -347,7 +347,9 @@ int main()
                 }
             }
 
-            users->setBirthday(day, month, year);
+            users->setDay(day);
+            users->setMonth(month);
+            users->setYear(year);
             //////////////////
             ///check height///
             //////////////////
@@ -440,7 +442,8 @@ int main()
 
             }
 
-            users->setHeight(feet, inches);
+            users->setFeet(feet);
+            users->setInches(inches);
 
             cout << "Please enter your gender as \"Male\", \"Female\", or \"Other\"";
             cout << endl;
@@ -511,7 +514,7 @@ int main()
             statement = false;
         }
     } while (statement == true);
-//
 
+//
     return 0;
 }
