@@ -44,7 +44,7 @@ int main()
 
 
   ////////////////////////////
-  ////Initializes Main Meny//
+  ////Initializes Main Menu//
   //////////////////////////
 
   cout << "=====================================================================";
@@ -66,14 +66,16 @@ int main()
   //do while loop for main menu//
   //////////////////////////
 
-    cout << "Choose an option: ";
-    cout << endl;
-    int n;
-    cin >> n;
-    cout << endl;
 
-  bool statement = true;
-  do {
+    bool statement = true;
+    do {
+
+        cout << "Choose an option: ";
+        cout << endl;
+        int n;
+        cin >> n;
+        cout << endl;
+
     if (n == 1)
     {
       cout << "===";
@@ -211,15 +213,9 @@ int main()
               cout << endl;
               cout << endl;
 
-              ////////////////////////////
+              ///////////////////////////////
               //do while loop for main menu//
-              //////////////////////////
-
-                cout << "Choose an option: ";
-                cout << endl;
-                int n;
-                cin >> n;
-                cout << endl;
+              //////////////////////////////
             }
     }
 
@@ -406,7 +402,6 @@ int main()
                         cin.clear();
                         cin.ignore(1000, '\n');
                         continue;
-
                     }
 
 
@@ -561,7 +556,7 @@ int main()
             cout << "1. Login\n";
             cout << "2. Add User\n";
             cout << "3. Exit\n\n";
-            cout << "================================\n\n";
+            cout << "===";
 
             cout << "Choose an option: ";
             cout << endl;
@@ -569,20 +564,20 @@ int main()
             cin >> n;
             cout << endl;
 
-        }
-        else if (n == 3)
-        {
-            cout << "================================";
-            cout << endl;
-            cout << endl;
-            cout << "Thanks for coming! See you next time!";
-            cout << endl;
-            cout << endl;
-            cout << "=====================================================================";
-            cout << endl;
-            statement = false;
-        }
-    } while (statement == true);
+          }
+    else if (n == 3)
+    {
+      cout << "===";
+      cout << endl;
+      cout << endl;
+      cout << "Thanks for coming! See you next time!";
+      cout << endl;
+      cout << endl;
+      cout << "=====================================================================";
+      cout << endl;
+      statement = false;
+    }
+  } while (statement == true);
 
 
     return 0;
