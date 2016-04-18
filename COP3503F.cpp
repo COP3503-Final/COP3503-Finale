@@ -11,22 +11,7 @@
 using namespace std;
 
 
-void newUser::writeToFile(string name, int day, int month, int year, int feet, int inches, string gender,
-                          string color)
-{
 
-
-    ofstream myfile;
-    myfile.open("user.csv", ofstream :: app);
-    myfile << name <<",";
-    myfile << day << "/" << month << "/" << year << ",";
-    myfile << feet << " " << inches << ",";
-    myfile << gender << ",";
-    myfile << color << endl;
-
-    myfile.close();
-
-}
 
 string name = "";
 int day = 0;
@@ -34,7 +19,6 @@ int month = 0;
 int year = 0;
 int feet = 0;
 int inches = 0;
-int height = 0;
 string gender = "";
 string color = "";
 
@@ -66,35 +50,74 @@ int main()
   //do while loop for main menu//
   //////////////////////////
 
+    cout << "Choose an option: ";
+    cout << endl;
+    int n;
+
 
     bool statement = true;
     do {
+        /////////////////////////////
+        ///checks menu input/////////
+        ////////////////////////////
 
-        cout << "Choose an option: ";
-        cout << endl;
-        int n;
-        cin >> n;
-        cout << endl;
+        while(true)
+        {
 
-    if (n == 1)
-    {
-      cout << "===";
-      cout << endl;
-      cout << endl;
-      cout << "Login";
-      cout << endl;
-      cout << endl;
-      cout << "1. Input User Name"; //Open OpenCV once they figure out how to implement it
-      cout << endl;
-      cout << "2. Exit";
-      cout << endl;
-      cout << endl;
-      cout << "Choose an option: ";
-      int n;
-      cin >> n;
-      cout << endl;
-//
-//
+            cin >> n;
+            cout << endl;
+            //checks for letters
+            if(cin.fail())
+            {
+
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Please enter a number that is related to a menu choice";
+                cout << endl;
+                continue;
+
+            }
+
+            //checks for range/odd
+
+            if(n < 1 || n > 3)
+            {
+
+                cout<< "Please enter a number that is related to a menu choice";
+                cout << endl;
+                cin.clear();
+                cin.ignore(1000, '\n');
+                continue;
+
+            }
+
+                //double checks for decimals and leaves while with proper input
+            else
+            {
+                false;
+                break;
+            }
+
+
+        }
+        if (n == 1)
+        {
+            cout << "================================";
+            cout << endl;
+            cout << endl;
+            cout << "Login";
+            cout << endl;
+            cout << "1. Input User Name"; //Open OpenCV once they figure out how to implement it
+            cout << endl;
+            cout << "2. Exit";
+            cout << endl;
+            cout << endl;
+            cout << "Choose an option: ";
+            int n;
+            cin >> n;
+            cout << endl;
+
+
             if (n == 1)
                 //facial recognition would pop up instead of asking for the username
             {
@@ -221,6 +244,7 @@ int main()
 
         else if (n == 2)
         {
+            newUser users = newUser();
             cout << "Ready to create a new user!" << endl;
             cout << "Please type in a username that is between 1 and 15 characters inclusive: ";
             cout << endl;
@@ -228,6 +252,7 @@ int main()
             cout << endl;
             while(name.length() > 15)
             {
+                //check for username already being used?
                 if(name.length() > 15)
                 {
                     cout << "That username is too long!";
@@ -250,6 +275,8 @@ int main()
                 }
 
             }
+
+            users.setName(name);
             cin.clear();
             ////////////////////////////
             //checks for day of birth//
@@ -416,7 +443,7 @@ int main()
                 }
             }
 
-
+            users.setBirthday(day, month, year);
             //////////////////
             ///check height///
             //////////////////
@@ -460,6 +487,7 @@ int main()
                     break;
                 }
             }
+
             ////////////////////////////
             ////gets inches of height///
             ///////////////////////////
@@ -508,7 +536,7 @@ int main()
 
             }
 
-
+            users.setHeight(feet, inches);
 
             cout << "Please enter your gender as \"Male\", \"Female\", or \"Other\"";
             cout << endl;
@@ -532,6 +560,7 @@ int main()
                 }
             }
 
+            users.setGender(gender);
             cout << endl;
 
             /////////////////////////
@@ -545,11 +574,11 @@ int main()
 
             cout << endl;
 
+            users.setColor(color);
 
-            newUser users = newUser();
 
-            users.writeToFile(name, day, month, year, feet, inches, gender, color);
 
+            users.writeToFile();
 
             cout << "=====================================================================\n\n";
             cout << "Computer Vision Recognition System Acquisition Mission Menu\n\n";
