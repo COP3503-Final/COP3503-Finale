@@ -12,7 +12,7 @@ using namespace std;
 
 
 
-
+vector<newUser> program_users;
 string name = "";
 int day = 0;
 int month = 0;
@@ -26,6 +26,46 @@ string color = "";
 int main()
 {
 
+  ifstream myFile("user.csv");
+string line;
+  while (getline(myFile, line))
+  {
+    string a,b,c,d,e;
+    istringstream s(line);
+    string field;
+        while (getline(s, field,','))
+        {
+          //cout << field << "\t";
+
+
+
+            a = field;
+            while (getline(s, field,','))
+            {
+                if (b == "")
+                {
+                  b = field;
+                }
+                else if (b != "" && c == "" && d == "")
+                {
+                  c = field;
+                }
+                else if (b != "" && c!= "" && d == "")
+                {
+                  d = field;
+                }
+                else{
+                  e = field;
+                }
+            }
+
+        }
+        newUser* swag = new newUser(a,b,c,d,e);
+
+        program_users.push_back(*swag);
+        //cout<<program_users<<endl;
+  }
+
 
     ////////////////////////////
     ///Initializes Main Menu///
@@ -35,6 +75,7 @@ int main()
     cout << endl;
     cout << endl;
     //All of the '==' will be used to separate the menus for easier viewing
+
     cout << "Welcome to the Computer Vision Recognition System Acquisition Mission";
     cout << endl;
     cout << endl;
@@ -129,18 +170,18 @@ int main()
                 cin >> n;
 
 
-                ifstream myFile("user.csv");
-                string line;
-                while (getline(myFile, line))
-                {
-                    std::istringstream s(line);
-                    std::string field;
-                    while (getline(s, field,','))
-                    {
-                        cout << field << "\t";
-                        cout << endl;
-                    }
-                }
+                // ifstream myFile("user.csv");
+                // string line;
+                // while (getline(myFile, line))
+                // {
+                //     std::istringstream s(line);
+                //     std::string field;
+                //     while (getline(s, field,','))
+                //     {
+                //         cout << field << "\t";
+                //         cout << endl;
+                //     }
+                // }
 
             }
         }
@@ -350,6 +391,7 @@ int main()
             users->setDay(day);
             users->setMonth(month);
             users->setYear(year);
+            string birthday = to_string(day) + "/" + to_string(month) + "/" + to_string(year);
             //////////////////
             ///check height///
             //////////////////
@@ -445,6 +487,8 @@ int main()
             users->setFeet(feet);
             users->setInches(inches);
 
+            string height = to_string(feet) + "\'"  + to_string(inches) + "\"";
+
             cout << "Please enter your gender as \"Male\", \"Female\", or \"Other\"";
             cout << endl;
             cin >> gender;
@@ -483,7 +527,12 @@ int main()
 
             users->setColor(color);
 
+            newUser* temp = new newUser(name, birthday, height, gender, color);
 
+            program_users.push_back(*temp);
+
+
+            cout<<(program_users.back()).name<<endl;
 
             users->writeToFile();
 
