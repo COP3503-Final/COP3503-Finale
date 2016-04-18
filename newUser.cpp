@@ -21,7 +21,7 @@ string newUser::getName()
   return this->name;
 }
 
-void newUser ::setBirthday(int day, int month, int year)
+void newUser::setBirthday(int day, int month, int year)
 {
   this->birthday = to_string(day) + "/" + to_string(month) + "/" + to_string(month);
 }
@@ -31,22 +31,22 @@ string newUser::getBirthday()
   return this->birthday;
 }
 
-void newUser ::setHeight(int feet, int inches)
+void newUser::setHeight(int feet, int inches)
 {
   this->height = to_string(feet) + "\'"  + to_string(inches) + "\"";
 }
 
-string newUser :: getHeight()
+string newUser::getHeight()
 {
   return this->height;
 }
 
-void newUser ::setGender(string gender)
+void newUser::setGender(string gender)
 {
   this->gender = gender;
 }
 
-string newUser ::getGender()
+string newUser::getGender()
 {
   return this->gender;
 }
@@ -66,7 +66,7 @@ int newUser::getDay()
   return this->day;
 }
 
-int newUser ::getMonth()
+int newUser::getMonth()
 {
   return this->month;
 }
@@ -85,4 +85,3 @@ void newUser::writeToFile()
   myfile.close();
 
 }
-
