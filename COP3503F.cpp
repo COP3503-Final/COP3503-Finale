@@ -220,29 +220,6 @@ int main()
             }
 
             else if (n == 2)
-            {
-              cout << "=====================================================================";
-              cout << endl;
-              cout << endl;
-              //All of the '==' will be used to separate the menus for easier viewing
-              cout << "Welcome to the Computer Vision Recognition System Acquisition Mission";
-              cout << endl;
-              cout << endl;
-              cout << "1. Login";
-              cout << endl;
-              cout << "2. Add User";
-              cout << endl;
-              cout << "3. Exit";
-              cout << endl;
-              cout << endl;
-
-              ///////////////////////////////
-              //do while loop for main menu//
-              //////////////////////////////
-            }
-    }
-
-        else if (n == 2)
         {
             newUser users = newUser();
             cout << "Ready to create a new user!" << endl;
@@ -429,6 +406,7 @@ int main()
                         cin.clear();
                         cin.ignore(1000, '\n');
                         continue;
+
                     }
 
 
@@ -585,7 +563,7 @@ int main()
             cout << "1. Login\n";
             cout << "2. Add User\n";
             cout << "3. Exit\n\n";
-            cout << "===";
+            cout << "================================\n\n";
 
             cout << "Choose an option: ";
             cout << endl;
@@ -593,7 +571,7 @@ int main()
             cin >> n;
             cout << endl;
 
-          }
+        }
     else if (n == 3)
     {
       cout << "===";
