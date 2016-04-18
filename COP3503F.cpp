@@ -147,7 +147,7 @@ int main()
 
         else if (n == 2)
         {
-            newUser users = newUser();
+            newUser* users = new newUser();
             cout << "Ready to create a new user!" << endl;
             cout << "Please type in a username that is between 1 and 15 characters inclusive: ";
             cout << endl;
@@ -179,7 +179,7 @@ int main()
 
             }
 
-            users.setName(name);
+            users->setName(name);
             cin.clear();
             ////////////////////////////
             //checks for day of birth//
@@ -347,7 +347,7 @@ int main()
                 }
             }
 
-            users.setBirthday(day, month, year);
+            users->setBirthday(day, month, year);
             //////////////////
             ///check height///
             //////////////////
@@ -440,7 +440,7 @@ int main()
 
             }
 
-            users.setHeight(feet, inches);
+            users->setHeight(feet, inches);
 
             cout << "Please enter your gender as \"Male\", \"Female\", or \"Other\"";
             cout << endl;
@@ -464,7 +464,7 @@ int main()
                 }
             }
 
-            users.setGender(gender);
+            users->setGender(gender);
             cout << endl;
 
             /////////////////////////
@@ -478,11 +478,11 @@ int main()
 
             cout << endl;
 
-            users.setColor(color);
+            users->setColor(color);
 
 
 
-            users.writeToFile();
+            users->writeToFile();
 
             cout << "=====================================================================\n\n";
             cout << "Computer Vision Recognition System Acquisition Mission Menu\n\n";
@@ -511,7 +511,7 @@ int main()
             statement = false;
         }
     } while (statement == true);
-//
+
 
     return 0;
 }
