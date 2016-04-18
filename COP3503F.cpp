@@ -228,6 +228,7 @@ int main()
             cout << endl;
             while(name.length() > 15)
             {
+                //check for username already being used?
                 if(name.length() > 15)
                 {
                     cout << "That username is too long!";
