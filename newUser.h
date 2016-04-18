@@ -1,8 +1,5 @@
 #include <string>
 #include <iostream>
-
-#include <string>
-#include <iostream>
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -30,7 +27,7 @@ private:
 
 public:
 
-
+    newUser();
     void writeToFile();
 
     void setName(string name);
@@ -51,4 +48,12 @@ public:
 
     void setColor(string color);
     string getColor();
+
+
+
+
+
+
+
+
 };

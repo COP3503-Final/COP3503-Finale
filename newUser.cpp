@@ -1,3 +1,16 @@
+#include <iostream>
+#include "newUser.h"
+#include <string>
+
+using namespace std;
+
+newUser::newUser()
+{
+
+}
+
+
+
 void newUser::setName(string name)
 {
   this->name = name;
