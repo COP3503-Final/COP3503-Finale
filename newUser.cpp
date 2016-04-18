@@ -9,6 +9,14 @@ newUser::newUser()
 
 }
 
+newUser::newUser(string name, string birthday, string height, string gender, string color){
+  this->name = name;
+  this->birthday = birthday;
+  this->height = height;
+  this->gender = gender;
+  this->color = color;
+}
+
 
 
 void newUser::setName(string name)
